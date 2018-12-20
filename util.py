@@ -70,7 +70,8 @@ class pttnbaBot:
         if result == "":
             result = "今日無比賽"
         return result
-        
+
+#經由開眼電影網查詢今天的電影時刻
 class movieBot:
     def getMovieID(movieName, city):
         r = requests.get("http://www.atmovies.com.tw/movie")
@@ -118,6 +119,7 @@ class movieBot:
             result = "您輸入的戲院目前未上映該電影"
         return result.strip("\n")
 
+#所有template 的回應
 class templateResponse:
     def homeTemplate():
         return TemplateSendMessage(
@@ -286,4 +288,4 @@ class templateResponse:
 #a = movieBot.getTimetable("水行", "台北")
 #print(a)
 #print(youtubeBot.youtubeBot("Lydia"))
-print(pttnbaBot.getBoxScore())
+#print(pttnbaBot.getBoxScore())
