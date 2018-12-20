@@ -229,7 +229,7 @@ class templateResponse:
                         ),
                         URIAction(
                             label='肯尼的履歷',
-                            uri="https://bit.ly/2QDk0vw"
+                            uri="http://bit.ly/2GxckX8"
                         ),
                         MessageTemplateAction(
                                 label='回主選單',
@@ -264,11 +264,11 @@ class templateResponse:
                     actions=[
                         MessageTemplateAction(
                             label='台北電影時刻查詢',
-                            text='台北電影時刻查詢'
+                            text='台北電影時刻查詢！'
                         ),
                         MessageTemplateAction(
                             label='今日nba比分查詢',
-                            text='今日nba比分查詢'
+                            text='今日nba比分查詢！'
                         ),
                         MessageTemplateAction(
                                 label='回主選單',
