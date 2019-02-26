@@ -141,16 +141,6 @@ def handle_message(event):
     elif msg == "自行點歌！":
         result = TextSendMessage(text="請問聽什麼歌？")
         db.put(user_id.encode(), "youtube".encode())
-    elif msg == "想更了解肯尼嗎！":
-        result = templateResponse.wantToKnowMore()
-    elif msg == "我想了解更多有關肯尼的資訊！" or msg == '抱歉不行不想認識肯尼！':
-        result = templateResponse.kennyinfo()
-    elif msg == "肯尼的基本介紹！":
-        result = templateResponse.kennyintro()
-    elif msg == "肯尼的五個冷知識！":
-        result = templateResponse.fiveColdKnowledge()
-    elif msg == "肯尼特製實用的小功能！":
-        result = templateResponse.smallFunction()
     elif msg == "關於kenny_bot！":
         result = templateResponse.botIntro()
     elif msg == "回主選單！":
