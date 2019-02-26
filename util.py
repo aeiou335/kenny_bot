@@ -46,9 +46,9 @@ class pttnbaBot:
             publishDate = data.find("div", {"class":"date"}).text
             _, day = publishDate.split("/")
             #print("publishDate", publishDate)
+            #print(title)
             if curr_day != day:
                 end = True
-                break
             if title[1:5] == "[BOX":
                 href = base_url + data.find("div", {"class":"title"}).a["href"]
                 #print(title, href)
@@ -70,8 +70,7 @@ class pttnbaBot:
         if result == "":
             result = "今日無比賽"
         return result
-
-#經由開眼電影網查詢今天的電影時刻
+        
 class movieBot:
     def getMovieID(movieName, city):
         r = requests.get("http://www.atmovies.com.tw/movie")
@@ -119,7 +118,6 @@ class movieBot:
             result = "您輸入的戲院目前未上映該電影"
         return result.strip("\n")
 
-#所有template 的回應
 class templateResponse:
     def homeTemplate():
         return TemplateSendMessage(
@@ -136,12 +134,12 @@ class templateResponse:
                                 text='最近煩惱很多！'
                             ),
                             MessageTemplateAction(
-                                label='想更了解肯尼嗎！',
-                                text='想更了解肯尼嗎！'
+                                label="台北電影時刻查詢！",
+                                text="台北電影時刻查詢！"
                             ),
                             MessageTemplateAction(
-                                label='肯尼特製實用的小功能',
-                                text='肯尼特製實用的小功能！'
+                                label="今日nba比分查詢！",
+                                text="今日nba比分查詢！"
                             )
                         ]
                     ),
@@ -240,6 +238,7 @@ class templateResponse:
                     ]
                 )
             )
+    """
     def kennyintro():
         msg1 = "1. 我叫林耘寬，畢業於台灣大學財金系以及數學系，現就讀於台灣大學財金所。"
         msg2 = "2. 從大學開始自學程式，後來發現自己對於這領域的熱愛，便修習了大部分的資工系必修以及許多選修課程。"
@@ -274,13 +273,14 @@ class templateResponse:
                         ),
                         MessageTemplateAction(
                                 label='回主選單',
-                                text='回主選單'
+                                text='回主選單！'
                         )
                     ]
                 )
             )
+    """
     def botIntro():
-        msg = "本聊天機器人提供肯尼的個人簡單資訊以及一些實用的小功能，例如歌曲搜尋、電影時刻搜尋等等。 \
+        msg = "本聊天機器人提供一些實用的小功能，例如歌曲搜尋、電影時刻搜尋等等。 \
             \n在任何時刻發出貼圖均可回到主選單，或者隨意輸入文字也可回到主選單。 \
             \n本聊天機器人所有圖片為imgur網站取得，除了測試此機器人以外不做任何用途。 \
             \n本聊天機器人具有極高的人工智慧，請使用者謹慎斟酌使用。"+chr(0x100001)
@@ -288,4 +288,4 @@ class templateResponse:
 #a = movieBot.getTimetable("水行", "台北")
 #print(a)
 #print(youtubeBot.youtubeBot("Lydia"))
-#print(pttnbaBot.getBoxScore())
+print(pttnbaBot.getBoxScore())
